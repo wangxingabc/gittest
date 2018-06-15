@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .one{
+            width:500px;
+            height:500px;
+            background: plum;
+        }
+        .two{
+            width:300px;
+            height:300px;
+            background: yellow;
+            margin: 0 auto;
+            position: relative;
+        }
+        .three{
+            width:100px;
+            height:100px;
+            background: red;
+            position: absolute;
+            left:10px;
+            top:10px;
+        }
+
+    </style>
+    <script src="../js/jquery-3.3.1.js"></script>
+</head>
+<body>
+    <div class="one">
+        <div class="two">
+            <div class="three" id="miaov"></div>
+        </div>
+    </div>
+
+    <script>
+        $('#miaov').mousedown(function(ev){
+            let disX = ev.pageX - $(this).position().left
+            let disY = ev.pageY - $(this).position().top
+            $(document).mousemove(function(ev){
+                $('#miaov').css({
+                    left:ev.pageX - disX,
+                    top:ev.pageY - disY
+                })
+            })
+            $(document).mouseup(function(){
+                $(document).off('mousemove mouseup')
+            })
+        })
+    
+    
+    </script>
+</body>
+</html>

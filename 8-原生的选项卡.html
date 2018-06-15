@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			div {
+				width: 200px;
+				height: 200px;
+				border: 1px solid #000;
+				display: none;
+			}
+			.yellow {
+				background: yellow;
+			}
+		</style>
+		<script src="./src/jquery-3.3.1.js"></script>
+		<script>
+			/*
+				引入之后，提供全局的函数 $
+
+					$('css选择器')  返回数组，选中的元素
+
+					$(原生的元素) 包装成一个jq对象
+
+				绑定事件
+					$('css选择器').事件名(事件处理函数)
+
+					$('css选择器') 选中多个元素，内部会循环给每一个绑定点击处理
+
+					事件处理函数中this是原生元素
+			
+				$('css选择器') 返回的是jq对象，可以调用jq的方法
+				原生的元素，是不能直接调用jq的方法
+
+
+				方法
+					css(attr,value) 设置
+					css({
+						attr:value
+					})
+					css(attr) 获取
+
+					addClass(class名字) 添加class
+
+					eq(index) 找到自定下标的元素，返回的依然是一个jq
+
+					each(function (){  循环jq对象集合
+							
+					})
+			*/
+		</script>
+	</head>
+
+	<body>
+		
+		<div style="display: block;">世界杯</div>
+		<div>俄罗斯</div>
+		<div>沙特</div>
+		<button class="yellow">世界杯</button>
+		<button>俄罗斯</button>
+		<button>沙特</button>
+		<script>
+
+			var buttons = document.querySelectorAll('button');
+
+			// 利用下标，操作的都是同一个对象
+			buttons[0].a =10;
+			buttons[0].b =10;
+			buttons[0].c =10;
+
+			/*alert(buttons[0].a)
+			alert(buttons[0].b)*/
+
+			console.log(buttons[0] === buttons[0]);
+
+			for( var i = 0; i < buttons.length; i++ ){
+				buttons[i].index = i;
+				buttons[i].onclick = function (){
+					alert(this.index)
+				}
+			}
+
+
+		</script>
+	</body>
+</html>

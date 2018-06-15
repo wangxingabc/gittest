@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script src="../src/jquery-3.3.1.js"></script>
+		<script type="text/miaov">
+			$(css选择器)
+			$(元素) 包装成jq对象
+
+			$(css选择器).事件名(事件处理函数)
+				事件处理函数中的this -> 原生的元素
+				调用一次绑定一次
+			解绑事件处理函数
+				$(css选择器).off() 所有事件的所有函数都解绑
+				$(css选择器).off(evname) 指定evname事件的所有函数都解绑
+				$(css选择器).off(evname,fn) 指定evname事件的fn函数都解绑
+
+			$(css选择器).on(evname,[事件源，选择器],evFn)
+				
+			index(); 元素在所有兄弟节点所处的位置
+			index(选择器); 元素在指定选择器元素中所处的位置
+
+			css(attr,value) 设置样式
+			css({
+				attr:value	设置样式
+			})
+			css(attr) 获取样式
+
+			addClass(className)
+			removeClass(className)
+			toggleClass(className)
+
+			data(key,value) 设置在内存中
+			data(key) 取值
+
+			attr(key,value) 设置在标签行间
+			attr(key) 取值
+			
+
+
+		</script>
+	</head>
+
+	<body>
+		<button class="abc">按钮</button>
+		<span class="abc">我是span</span>
+		<p>我是p标签</p>
+		<script>
+			/*$(document).on('click',function (e){
+				if(e.target.nodeName === 'BUTTON'){
+					console.log('click');	
+				}
+				
+			})*/
+			// 委托给组件节点，只有点击第二参数为指定选择器的元素才能触发函数
+			$(document).on('click','.abc',function (e){
+				console.log('click');				
+			})
+
+			//$(document).off();
+			//$(document).off('mousemove');
+
+		</script>
+	</body>
+</html>

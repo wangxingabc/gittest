@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script src="../src/jquery-3.3.1.js"></script>
+		<script type="text/miaov">
+			$(css选择器)
+			$(元素) 包装成jq对象
+
+			$(css选择器).事件名(事件处理函数)
+				事件处理函数中的this -> 原生的元素
+				调用一次绑定一次
+			解绑事件处理函数
+				$(css选择器).off() 所有事件的所有函数都解绑
+				$(css选择器).off(evname) 指定evname事件的所有函数都解绑
+				$(css选择器).off(evname,fn) 指定evname事件的fn函数都解绑
+
+		</script>
+	</head>
+
+	<body>
+		<script>
+			$(document).click(function (){
+				alert(1)		
+			})
+			$(document).click(function (){
+				alert(2)		
+			})
+			function move1(){
+				console.log('mousemove1');
+			}
+			$(document).mousemove(move1)
+			$(document).mousemove(function (){
+				console.log('mousemove2')		
+			})
+
+			//$(document).off();
+			//$(document).off('mousemove');
+			$(document).off('mousemove',move1);
+
+		</script>
+	</body>
+</html>

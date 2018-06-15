@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			// jquery
+			// jquery是一个库
+			// 主要用来操作DOM，绑定事件，做动画，使用ajax请求，可扩展的写插件
+			// 处理了浏览器的兼容性问题
+			/*
+				ie低版本 jquery1.9以下版本
+					推荐使用 1.8.3版本
+
+				不考虑ie
+					jquery2版本以上
+
+				最新是 3.3.1
+
+				通过本地script引入的方式，
+				jquery-3.3.1.min.js  生产环境使用
+				jquery-3.3.1.js 开发环境使用
+
+				API
+				API（Application Programming Interface,应用程序编程接口）是一些预先定义的函数，目的是提供应用程序与开发人员基于某软件或硬件得以访问一组例程的能力，而又无需访问源码，或理解内部工作机制的细节。
+
+				1. 一个库或框架定义了函数，暴露出去给开发者使用
+				2. 无需关心内部实现原理和实现细节，关心的是暴露出来的函数如何使用
+
+				
+				文档：http://api.jquery.com/
+				中文文档：https://www.jquery123.com/
+
+			*/
+
+
+
+		</script>
+	</head>
+
+	<body>
+		<script>
+
+			function on(el,evName,evFn){
+				if(document.addEventListener){
+
+					el.addEventListener(evName,evFn)
+				}else{
+
+					el.attachEvent('on'+evName,evFn)
+				}	
+			}
+
+			/*
+				使用一个功能
+					1. 判断浏览器是否是预期的浏览器
+					2. 浏览器是否支持功能
+			*/
+
+			/*alert(document.addEventListener)
+
+			if(document.addEventListener){
+
+				document.addEventListener('click',function (){
+					alert(1)		
+				})
+			}else{
+
+				document.attachEvent('onclick',function (){
+					alert(1)	
+				})
+			}*/
+
+			on(document,'click',function (){
+				alert(1)	
+			})
+			
+
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,35 @@
+https://www.zybuluo.com/mdeditor
+
+markdown语法  1个小时  markdown
+
+
+
+敲命令出错了，把错误复制粘贴再百度搜索中。。。
+
+http://sf.gg/
+https://segmentfault.com/
+
+
+使用jquery.api.3.2.1.CHM，打开一片空白，解决：
+
+右击 -> 属性 -> 解除锁定
+
+
+http://todomvc.com/examples/vue/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			div {
+				width: 200px;
+				height: 200px;
+				border: 1px solid #000;
+				display: none;
+			}
+			.yellow {
+				background: yellow;
+			}
+		</style>
+		<script src="./src/jquery-3.3.1.js"></script>
+		<script>
+			/*
+				引入之后，提供全局的函数 $
+
+					$('css选择器')  返回数组，选中的元素
+
+					$(原生的元素) 包装成一个jq对象
+
+				绑定事件
+					$('css选择器').事件名(事件处理函数)
+
+					$('css选择器') 选中多个元素，内部会循环给每一个绑定点击处理
+
+					事件处理函数中this是原生元素
+			
+				$('css选择器') 返回的是jq对象，可以调用jq的方法
+				原生的元素，是不能直接调用jq的方法
+
+
+				方法
+					css(attr,value) 设置
+					css({
+						attr:value
+					})
+					css(attr) 获取
+			*/
+		</script>
+	</head>
+
+	<body>
+		<button class="yellow">世界杯</button>
+		<button>俄罗斯</button>
+		<button>沙特</button>
+		<div style="display: block;">世界杯</div>
+		<div>俄罗斯</div>
+		<div>沙特</div>
+		<script>
+			console.log($('button'));  // 返回数组，选中的元素
+
+			$('button').click(function (){
+				console.log(this);
+				//$(this).css('width',500)
+				$(this).css({
+					'width':500,
+					'height': 500
+				})
+
+				console.log( $(this).css('height') );
+			})
+
+		</script>
+	</body>
+</html>
